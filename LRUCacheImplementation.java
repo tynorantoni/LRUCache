@@ -57,7 +57,7 @@ public class LRUCacheImplementation<K, V> extends LinkedHashMap<String, Object> 
 		int i = 0;
 
 		if (index > this.size()) {
-			return null;
+			return new LRUCacheImplementation<String, Object>(1);
 		}
 
 		for (String key : this.keySet()) {
@@ -82,7 +82,7 @@ public class LRUCacheImplementation<K, V> extends LinkedHashMap<String, Object> 
 	public CacheItem getItem(String key) {
 
 		if (!this.containsKey(key)) {
-			return null;
+			return new LRUCacheImplementation<String, Object>(1);
 		}
 
 		this.get(key);

@@ -3,7 +3,6 @@ package appPack;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -35,7 +34,7 @@ public class JUnitLRU {
 		test.cacheItem(exampleObject1, exampleObject1.getName());
 		test.cacheItem(exampleObject2, exampleObject2.getName());
 		assertNotNull(test);
-		assertNull("least object was removed", test.getItem("trzeci"));
+		assertEquals("least object was removed","{}", test.getItem("trzeci").toString());
 		
 	}
 
